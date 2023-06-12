@@ -1,9 +1,10 @@
-import Heading from "./Heading";
+import Navbar from "./Navbar";
+import Link from "next/link";
 
 const Header = () => {
   return (
     <header>
-      <Heading tag="h3" text="Header" />
+      <Navbar />
     </header>
   );
 };
