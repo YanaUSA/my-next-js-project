@@ -1,12 +1,12 @@
 import Heading from "../../components/Heading";
+import Link from "next/link";
 import Head from "next/head";
-import { useEffect, useState } from "react";
 
 export const getStaticProps = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/users");
-  // const data = await response.json();
+  const data = await response.json();
 
-  const data = null;
+  // const data = null;
 
   if (!data) {
     return {
@@ -28,9 +28,9 @@ const Contacts = ({ contacts }) => {
       <Heading text="Contacts list:" />
       <ul>
         {contacts &&
-          contacts.map(({ id, name, email }) => (
+          contacts.map(({ id, name }) => (
             <li key={id}>
-              <strong>{name}</strong>({email})
+              <Link href={`/contacts/${id}`}>{name}</Link>
             </li>
           ))}
       </ul>
