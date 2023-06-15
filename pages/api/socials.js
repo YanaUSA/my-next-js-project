@@ -1,0 +1,9 @@
+import { socials } from "./data/social";
+
+export default function handler(req, res) {
+  console.log(req.method);
+
+  if (req.method === "GET") {
+    res.status(200).json(socials);
+  }
+}
