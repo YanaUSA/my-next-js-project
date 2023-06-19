@@ -2,14 +2,8 @@ import styles from "../styles/Home.module.scss";
 import Head from "next/head";
 import Heading from "../components/Heading";
 import Socials from "../components/Socials";
-import { GetStaticProps, NextPage } from "next";
-import { socialsType } from "../types";
 
-type socialsProps = {
-  socials: socialsType[],
-};
-
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps = async () => {
   try {
     const response = await fetch(`${process.env.API_HOST}/socials`);
     const data = await response.json();
@@ -30,7 +24,7 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 };
 
-const Home: NextPage<socialsProps> = ({ socials }) => {
+const Home = ({ socials }) => {
   return (
     <div className={styles.wrapper}>
       <Head>
