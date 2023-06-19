@@ -4,7 +4,7 @@ import { NextPage } from "next";
 import { socialsType } from "../types";
 
 type socialsProps = {
-  socials: socialsType[];
+  socials: Array<socialsType>;
 };
 
 const Socials: NextPage<socialsProps> = ({ socials }) => {
