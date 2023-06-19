@@ -29,3 +29,8 @@ export type headingType = {
   tag: keyof JSX.IntrinsicElements;
   text: string;
 };
+
+export type postType = {
+  id: number;
+  title: string;
+};

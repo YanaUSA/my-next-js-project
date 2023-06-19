@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { NextPage } from "next";
 import Heading from "../../components/Heading";
 import Link from "next/link";
 import Head from "next/head";
@@ -26,7 +26,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const Contacts: FC<contactsTypeProps> = ({ contacts }) => {
+const Contacts: NextPage<contactsTypeProps> = ({ contacts }) => {
   return (
     <>
       <Head>

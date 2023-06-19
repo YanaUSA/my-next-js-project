@@ -1,7 +1,7 @@
 import Heading from "./Heading";
-import { FC } from "react";
+import { NextPage } from "next";
 
-const Footer: FC = () => {
+const Footer: NextPage = () => {
   return (
     <footer>
       <Heading tag="h3" text="Created by webDev" />

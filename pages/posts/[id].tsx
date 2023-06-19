@@ -1,9 +1,15 @@
 import Head from "next/head";
 import PostInfo from "../../components/PostInfo";
+import { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import { postType } from "../../types";
+
+type postTypeProps = {
+  post: postType;
+};
 
 //========== Static Side Generation approach ==========//
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts/");
   const data = await response.json();
 
@@ -17,7 +23,7 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async (context) => {
   const { id } = context.params;
   const response = await fetch(
     `https://jsonplaceholder.typicode.com/posts/${id}`
@@ -35,7 +41,7 @@ export const getStaticProps = async (context) => {
   };
 };
 
-const Post = ({ post }) => (
+const Post: NextPage<postTypeProps> = ({ post }) => (
   <>
     <Head>
       <title>Contact page</title>

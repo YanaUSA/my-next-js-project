@@ -3,8 +3,9 @@ import styles from "../styles/404.module.scss";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import {NextPage} from 'next'
 
-const Error = () => {
+const Error: NextPage = () => {
   const router = useRouter();
 
   useEffect(() => {
@@ -19,7 +20,7 @@ const Error = () => {
         <Head>
           <title>Error</title>
         </Head>
-        <Heading text="404" />
+        <Heading text="404" tag={"symbol"} />
         <Heading tag="h2" text="Something went wrong..." />
       </div>
     </div>

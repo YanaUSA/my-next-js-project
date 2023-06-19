@@ -1,12 +1,12 @@
 import Heading from "./Heading";
-import { FC } from "react";
+import { NextPage } from "next";
 import { postType } from "../types";
 
 type postInfoProps = {
   post: postType;
 };
 
-const PostInfo: FC<postInfoProps> = ({ post }) => {
+const PostInfo: NextPage<postInfoProps> = ({ post }) => {
   const { title, body } = post || {};
 
   if (!post) {

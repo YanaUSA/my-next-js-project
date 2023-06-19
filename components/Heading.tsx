@@ -1,7 +1,7 @@
 import { headingType } from "../types";
-import { FC } from "react";
+import { NextPage } from "next";
 
-const Heading: FC<headingType> = ({ tag, text }) => {
+const Heading: NextPage<headingType> = ({ tag, text }) => {
   const Tag = tag || "h1";
 
   return (

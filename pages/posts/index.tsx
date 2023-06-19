@@ -1,8 +1,15 @@
 import Head from "next/head";
 import Link from "next/link";
 import Heading from "../../components/Heading";
+import { NextPage } from "next";
+import { postType } from "../../types";
+import { GetStaticProps } from "next";
 
-export const getStaticProps = async () => {
+type postTypeProps = {
+  posts: postType[];
+};
+
+export const getStaticProps: GetStaticProps = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
   const data = await response.json();
 
@@ -17,13 +24,13 @@ export const getStaticProps = async () => {
   };
 };
 
-const Posts = ({ posts }) => {
+const Posts: NextPage<postTypeProps> = ({ posts }) => {
   return (
     <>
       <Head>
         <title>Posts</title>
       </Head>
-      <Heading text="Posts list:" />
+      <Heading text="Posts list:" tag={"symbol"} />
       <ul>
         {posts &&
           posts.map(({ id, title }) => (

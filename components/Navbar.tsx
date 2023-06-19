@@ -2,7 +2,7 @@ import styles from "../styles/Navbar.module.scss";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { FC } from "react";
+import { NextPage } from "next";
 
 const navigation = [
   { id: 1, title: "Home", path: "/" },
@@ -10,7 +10,7 @@ const navigation = [
   { id: 3, title: "Contacts", path: "/contacts" },
 ];
 
-const Navbar: FC = () => {
+const Navbar: NextPage = () => {
   const { pathname } = useRouter();
   return (
     <nav className={styles.nav}>

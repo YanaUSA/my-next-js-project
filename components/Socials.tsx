@@ -1,13 +1,13 @@
 import styles from "../styles/Socials.module.scss";
 import Head from "next/head";
-import { FC } from "react";
+import { NextPage } from "next";
 import { socialsType } from "../types";
 
 type socialsProps = {
-  socials: socialsType;
+  socials: socialsType[];
 };
 
-const Socials: FC<socialsProps> = ({ socials }) => {
+const Socials: NextPage<socialsProps> = ({ socials }) => {
   if (!socials) {
     return null;
   }

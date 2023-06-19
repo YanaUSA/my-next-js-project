@@ -2,7 +2,7 @@ import Head from "next/head";
 import ContactInfo from "../../components/ContactInfo";
 import { GetServerSideProps } from "next";
 import { contactType } from "../../types";
-import { FC } from "react";
+import { NextPage } from "next";
 
 type contactTypeProps = {
   contact: contactType;
@@ -30,7 +30,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   };
 };
 
-const Contact: FC<contactTypeProps> = ({ contact }) => {
+const Contact: NextPage<contactTypeProps> = ({ contact }) => {
   return (
     <>
       <Head>
