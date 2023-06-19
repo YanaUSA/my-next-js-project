@@ -1,7 +1,7 @@
 import Navbar from "./Navbar";
-import Link from "next/link";
+import { FC } from "react";
 
-const Header = () => {
+const Header: FC = () => {
   return (
     <header>
       <Navbar />

@@ -30,7 +30,7 @@ const Home = ({ socials }) => {
       <Head>
         <title>Home</title>
       </Head>
-      <Heading text="Hello Next.js!" />
+      <Heading text="Hello Next.js!" tag={undefined} />
       <Socials socials={socials} />
     </div>
   );
